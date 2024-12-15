@@ -1,0 +1,63 @@
+.header {
+  position: absolute;
+  z-index: 30;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  &__wrapper {
+    position: fixed;
+    z-index: 29;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: var(--header-height);
+    transition: all 0.32s ease-in-out;
+    ._header-scroll & {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: translateY(-125%);
+    }
+    ._header-scroll._header-show & {
+      transform: translateY(0);
+    }
+  }
+
+  &__container {
+    width: 100%;
+    gap: rem(10);
+    @extend %fl-r-ctb;
+  }
+
+  &__logo {
+    &:not(:last-child) {
+      margin-right: rem(70);
+
+      //== 1360px ==//
+      @media (max-width: $note-l) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__menu {
+    &:not(:last-child) {
+      margin-right: rem(70);
+
+      //== 1360px ==//
+      @media (max-width: $note-l) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__actions {
+    @extend %fl-r-ct;
+    gap: rem(10);
+  }
+
+  &__social {
+    &:not(:last-child) {
+      margin-right: rem(16);
+    }
+  }
+}

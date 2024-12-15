@@ -1,0 +1,77 @@
+.page__contacts:not(:last-child) {
+  @include adaptiveValue("margin-bottom", 156, 50);
+}
+
+.contacts {
+  &__title {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: em(7, 70);
+    }
+  }
+  &__descr {
+    &:not(:last-child) {
+      margin-bottom: em(45, 24);
+    }
+  }
+
+  &__grid {
+    gap: rem(18);
+  }
+
+  &__item:nth-child(5n + 4),
+  &__item:nth-child(5n + 5) {
+    grid-column: span 6;
+  }
+
+  &__item:nth-child(5n + 1) {
+    margin-right: rem(39);
+  }
+
+  &__item:nth-child(5n + 2) {
+    margin-right: rem(-14);
+    margin-left: rem(-39);
+  }
+
+  &__item:nth-child(5n + 3) {
+    margin-left: rem(18);
+  }
+
+  &__accent {
+    @extend %fl-r-ct;
+    gap: rem(12);
+  }
+
+  &__item {
+    grid-column: span 4;
+    padding: rem(22) rem(30) rem(24);
+    background: rgba(53, 45, 39, 0.4);
+    border-radius: rem(14);
+  }
+
+  &__item-wide {
+    @extend %fl-r-ctb;
+  }
+
+  &__link {
+    display: block;
+    font-weight: 600;
+    line-height: 140%;
+    @include adaptiveValue("font-size", 30, 20);
+
+    margin-bottom: rem(3);
+  }
+
+  &__label {
+    line-height: 140%;
+    color: rgba(255, 204, 121, 0.8);
+    @include adaptiveValue("font-size", 22, 16);
+  }
+
+  &__description {
+    line-height: 140%;
+    color: rgba(236, 232, 223, 0.5);
+    @include adaptiveValue("font-size", 22, 16);
+  }
+}

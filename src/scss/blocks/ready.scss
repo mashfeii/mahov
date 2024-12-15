@@ -1,0 +1,50 @@
+.ready {
+  position: relative;
+  z-index: 2;
+
+  &__title {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: em(10, 70);
+    }
+  }
+
+  &__descr {
+    &:not(:last-child) {
+      margin-bottom: em(40, 24);
+    }
+  }
+
+  &__slider .slick-list {
+    overflow: visible;
+    &::before,
+    &::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+    &::before {
+      left: -100%;
+      background-color: var(--clr-white);
+    }
+    &::after {
+      right: -50%;
+      background: linear-gradient(
+        270deg,
+        #ece8df 0%,
+        rgba(236, 232, 223, 0) 100%
+      );
+    }
+  }
+
+  &__button {
+    &:last-child {
+      margin-top: rem(35);
+    }
+  }
+}

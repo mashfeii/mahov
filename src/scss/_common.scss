@@ -1,0 +1,64 @@
+[hidden] {
+  display: none;
+}
+
+.big-title {
+  font-family: MursGothic;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  @include adaptiveValue("font-size", 70, 34);
+}
+
+.title {
+  font-family: MursGothic;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  @include adaptiveValue("font-size", 55, 30);
+}
+
+.main-title {
+  font-family: MursGothic;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  @include adaptiveValue("font-size", 60, 32);
+
+  img {
+    vertical-align: center;
+  }
+}
+
+.center {
+  max-width: rem(768);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: rem(26);
+}
+
+._red {
+  color: var(--clr-red);
+}
+
+._cover {
+  overflow: hidden;
+  max-width: 92.6%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  border-radius: rem(14);
+
+  @include adaptiveValue("padding-top", 133, 60);
+  @include adaptiveValue("padding-bottom", 94, 45);
+}

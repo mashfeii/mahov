@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/general/_head.htm',{ "title":"Главная" })
+  <body>
+    <div class="wrapper">
+      @@include('html/general/_header.htm',{})
+      <main class="page">
+        @@include('html/blocks/hero.htm',{})
+        @@include('html/blocks/products.htm',{})
+        @@include('html/blocks/ready.htm',{})
+        @@include('html/blocks/about.htm',{})
+        @@include('html/blocks/advantages.htm',{})
+        @@include('html/blocks/reviews.htm',{})
+        @@include('html/blocks/contacts.htm',{})
+        @@include('html/blocks/cooperation.htm',{})
+      </main>
+      @@include('html/general/_footer.htm',{})
+    </div>
+    @@include('html/general/_popup.htm',{}) @@include('html/general/_js.htm',{})
+  </body>
+</html>

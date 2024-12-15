@@ -1,0 +1,49 @@
+.page__reviews:not(:last-child) {
+  @include adaptiveValue("margin-bottom", 160, 50);
+}
+
+.reviews {
+  &__title {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: em(20, 70);
+    }
+  }
+
+  &__descr {
+    &:not(:last-child) {
+      margin-bottom: em(62, 24);
+    }
+  }
+
+  &__slider .slick-list {
+    position: relative;
+    overflow: visible;
+    &::before,
+    &::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      left: -100%;
+      background-color: var(--clr-black);
+    }
+    &::after {
+      right: -50%;
+      background: linear-gradient(270deg, #1d1814 0%, rgba(29, 24, 20, 0) 100%);
+    }
+  }
+
+  &__slide {
+    /* margin: 0 rem(13); */
+    &:not(:last-child) {
+      margin-right: rem(26);
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.page__advantages:not(:last-child) {
+  @include adaptiveValue("margin-bottom", 144, 50);
+}
+
+.advantages {
+  position: relative;
+  z-index: 2;
+
+  &._cover {
+    @include adaptiveValue("padding-top", 110, 50);
+    @include adaptiveValue("padding-bottom", 115, 55);
+    background-color: #352d27;
+    color: var(--clr-white);
+  }
+
+  &__title {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: em(13, 70);
+    }
+  }
+
+  &__descr {
+    &:not(:last-child) {
+      margin-bottom: em(62, 24);
+    }
+  }
+
+  &__cards {
+    @extend %fl-r-ctb;
+    gap: rem(15);
+  }
+
+  &__card {
+    position: relative;
+    padding-top: rem(84);
+    @extend %fl-c-ct;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: rem(70);
+      height: rem(70);
+      transform: translateX(-50%);
+      @extend %bg-con;
+      background-image: url("@img/icons/heart.svg");
+      filter: drop-shadow(0px 10px 35px #d97e39)
+        drop-shadow(0px -4px 4px #e99134);
+    }
+  }
+
+  &__card-title {
+    font-weight: 500;
+    line-height: 140%;
+    color: #f1e5da;
+    @include adaptiveValue("font-size", 24, 16);
+
+    &:not(:last-child) {
+      margin-bottom: em(5, 24);
+    }
+  }
+
+  &__card-descr {
+    line-height: 140%;
+    color: rgba(241, 229, 218, 0.8);
+    @include adaptiveValue("font-size", 18, 15);
+  }
+}

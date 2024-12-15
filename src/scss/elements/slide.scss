@@ -1,0 +1,49 @@
+.slide {
+  margin: 0 rem(13);
+  background: #f3f1ed;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: rem(14);
+  padding: rem(11);
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: rem(278);
+    object-fit: cover;
+    border-radius: rem(8);
+
+    &:not(:last-child) {
+      margin-bottom: rem(28);
+    }
+  }
+
+  &__content {
+    padding: 0 rem(22) rem(24);
+  }
+
+  &__title {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #352d27;
+    @include adaptiveValue("font-size", 30, 20);
+
+    &:not(:last-child) {
+      margin-bottom: em(7, 30);
+    }
+  }
+
+  &__descr {
+    line-height: 140%;
+    color: rgba(53, 45, 39, 0.65);
+    @include adaptiveValue("font-size", 17, 15);
+
+    &:not(:last-child) {
+      margin-bottom: em(41, 17);
+    }
+  }
+
+  &__button {
+
+  }
+}

@@ -1,0 +1,28 @@
+.social {
+  @extend %fl-r-ct;
+  gap: rem(10);
+
+  &__icon {
+    flex: 0 0 rem(16);
+    width: rem(16);
+    height: rem(16);
+    transition: transform 0.3s ease;
+    @extend %bg-con;
+
+    @media(any-hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__phone {
+    font-weight: 600;
+    line-height: 140%;
+    @include adaptiveValue("font-size", 20, 16);
+
+    &:not(:first-child) {
+      margin-left: rem(3);
+    }
+  }
+}

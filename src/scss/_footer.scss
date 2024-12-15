@@ -1,0 +1,98 @@
+.footer {
+  @include adaptiveValue("padding-top", 55, 40);
+  @include adaptiveValue("padding-bottom", 90, 55);
+
+  &__container {
+    display: flex;
+  }
+
+  &__logo-block {
+    @extend %fl-c-st;
+    gap: rem(6);
+
+    &:not(:last-child) {
+      margin-right: rem(143);
+    }
+  }
+
+  &__logo {
+    &:not(:last-child) {
+      margin-bottom: rem(14);
+    }
+  }
+
+  &__link {
+    line-height: 140%;
+    leading-trim: both;
+    text-edge: cap;
+    color: rgba(236, 232, 223, 0.5);
+    @include adaptiveValue("font-size", 16, 12);
+  }
+
+  &__navigation {
+    display: flex;
+    gap: rem(92);
+    margin-right: auto;
+    @include adaptiveValue("padding-top", 40, 0, $containerWidth, 1023.98);
+  }
+
+  &__navigation-block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
+  &__navigation-link {
+    display: block;
+    line-height: 140%;
+    leading-trim: both;
+    text-edge: cap;
+    @include adaptiveValue("font-size", 18, 14);
+  }
+
+  &__navigation-title {
+    font-weight: 800;
+    line-height: 140%;
+    leading-trim: both;
+    text-edge: cap;
+    text-transform: uppercase;
+    color: rgba(236, 232, 223, 0.3);
+    @include adaptiveValue("font-size", 16, 13);
+  }
+
+  &__social-block .footer__link {
+    @include adaptiveValue("font-size", 18, 14);
+  }
+
+  &__social {
+    gap: rem(14);
+    .social__icon {
+      flex: 0 0 rem(24);
+      width: rem(24);
+      height: rem(24);
+    }
+    .social__phone {
+      @include adaptiveValue("font-size", 30, 18);
+    }
+  }
+
+  &__social-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: rem(3);
+    @include adaptiveValue("padding-top", 34, 0, $containerWidth, 1023.98);
+  }
+
+  &__button {
+    &:last-child {
+      margin-top: rem(14);
+    }
+  }
+}

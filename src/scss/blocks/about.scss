@@ -1,0 +1,59 @@
+.page__about {
+  &:not(:first-child) {
+    margin-top: rem(-40);
+  }
+  &:not(:last-child) {
+    margin-bottom: rem(-195);
+  }
+}
+
+.about {
+  @include adaptiveValue("padding-top", 173, 80);
+  @include adaptiveValue("padding-bottom", 326, 180);
+  @extend %bg-cov;
+
+  &__content {
+    grid-column: span 7;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: em(12, 70);
+    }
+  }
+
+  &__descr {
+    &:not(:last-child) {
+      margin-bottom: em(63, 24);
+    }
+  }
+
+  &__cards {
+    @extend %fl-r-ct;
+    gap: rem(40);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 57, 25);
+    }
+  }
+
+  &__card {
+    flex: 0 1 rem(167);
+    @extend %fl-c-st;
+    gap: rem(2);
+  }
+
+  &__card-count {
+    font-family: MursGothic;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    @include adaptiveValue("font-size", 50, 26);
+  }
+
+  &__card-descr {
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    @include adaptiveValue("font-size", 20, 16);
+  }
+}

@@ -1,0 +1,66 @@
+.page__hero:not(:last-child) {
+  @include adaptiveValue("margin-bottom", 47, 42);
+}
+
+.hero {
+  overflow: visible;
+
+  &__container {
+    align-items: center;
+    overflow: visible;
+  }
+
+  &__content {
+    grid-column: span 6;
+  }
+
+  &__title {
+    ._red {
+      display: inline-flex;
+      margin-top: rem(-20);
+      margin-bottom: rem(-15);
+      align-items: center;
+      line-height: 1;
+      gap: rem(4);
+    }
+    &:not(:last-child) {
+      margin-bottom: em(23, 60);
+    }
+  }
+
+  &__descr {
+    max-width: rem(536);
+    line-height: 150%;
+
+    &:not(:last-child) {
+      margin-bottom: em(37, 24);
+    }
+  }
+
+  &__image {
+    grid-column: span 6;
+    position: relative;
+    height: rem(680);
+    overflow: visible;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 88%;
+      height: 84%;
+      background: #9e6c42;
+      filter: blur(122px);
+    }
+
+    img {
+      position: absolute;
+      left: -11%;
+      top: -5%;
+      width: 130%;
+      object-fit: contain;
+    }
+  }
+}

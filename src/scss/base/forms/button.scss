@@ -1,0 +1,80 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+  padding: rem(13.5) rem(22);
+  border-radius: rem(30);
+  background-color: var(--clr-accent);
+
+  text-align: center;
+  font-weight: 500;
+  line-height: 140%;
+  leading-trim: both;
+  text-edge: cap;
+  letter-spacing: -0.01em;
+  color: var(--clr-black);
+
+  @include adaptiveValue("font-size", 18, 15);
+
+  svg {
+    flex: 0 0 rem(27);
+    width: rem(27);
+    height: rem(27);
+    object-fit: contain;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+    }
+  }
+
+  &__label {
+    padding: rem(6) rem(12);
+    background-color: #bf1d17;
+    border-radius: rem(12);
+
+    font-weight: 600;
+    line-height: 140%;
+    leading-trim: both;
+    text-edge: cap;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--clr-white);
+    @include adaptiveValue("font-size", 13, 11);
+  }
+
+  &._fw {
+    width: 100%;
+    padding: rem(27) rem(23);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: rem(10);
+    text-transform: uppercase;
+
+    @include adaptiveValue("font-size", 17, 15);
+  }
+
+  &._squared {
+    padding: rem(18) rem(27) rem(25) rem(23);
+    box-shadow:
+      0px 10px 35px -15px #d97e39,
+      inset 0px -4px 4px #e99134;
+    border-radius: rem(12);
+
+    font-weight: 600;
+    line-height: 140%;
+    @include adaptiveValue("font-size", 19, 15);
+  }
+
+  &._dark {
+    background: rgba(241, 230, 218, 0.08);
+    color: var(--clr-white);
+  }
+
+  &._white {
+    background-color: var(--clr-white);
+  }
+}

@@ -1,0 +1,12 @@
+.logo {
+  display: block;
+  position: relative;
+  flex: 0 0 rem(136);
+  width: rem(136);
+  height: rem(116);
+
+  img {
+    position: absolute;
+    right: rem(-3);
+  }
+}
