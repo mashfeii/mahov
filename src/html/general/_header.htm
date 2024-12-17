@@ -20,6 +20,42 @@
               <a href="javascript:void(0);" class="menu__link">Контакты</a>
             </li>
           </ul>
+        <div class="menu__catalog catalog">
+          <ul class="catalog__body" data-catalog-body>
+            <li class="catalog__item">
+              <a href="javascript:void(0);" class="catalog__link">Фото обои </a>
+            </li>
+            <li class="catalog__item">
+              <a href="javascript:void(0);" class="catalog__link">
+                Для творчества
+              </a>
+            </li>
+            <li class="catalog__item">
+              <a href="javascript:void(0);" class="catalog__link">Ароматы</a>
+            </li>
+            <li class="catalog__item">
+              <a href="javascript:void(0);" class="catalog__link">Картины</a>
+            </li>
+          </ul>
+        </div>
+        <div class="menu__social social">
+          <a
+            href="javascript:void(0);"
+            target="_blank"
+            class="social__icon"
+            style="background-image: url(@img/icons/tg.svg)"
+          ></a>
+          <a
+            href="javascript:void(0);"
+            target="_blank"
+            class="social__icon"
+            style="background-image: url(@img/icons/ws.svg)"
+          ></a>
+          <a href="tel:+79377771567" class="social__phone"
+            >+7 (937) 777-15-67</a
+          >
+        </div>
+        <button class="menu__button button">Заказать звонок</button>
         </nav>
       </div>
       <div class="header__actions">
@@ -41,8 +77,8 @@
           >
         </div>
         <div class="header__catalog catalog">
-          <button class="catalog__button">Каталог</button>
-          <ul class="catalog__body">
+          <button class="catalog__button" data-catalog>Каталог</button>
+          <ul class="catalog__body" data-catalog-body>
             <li class="catalog__item">
               <a href="javascript:void(0);" class="catalog__link">Фото обои </a>
             </li>
@@ -59,11 +95,11 @@
             </li>
           </ul>
         </div>
-        <button type="button" class="menu__icon icon-menu">
-          <span></span>
-        </button>
         <button class="header__button button">Заказать звонок</button>
       </div>
+      <button type="button" class="menu__icon icon-menu">
+        <span></span>
+      </button>
     </div>
   </div>
 </header>
