@@ -1,24 +1,45 @@
 .slide {
+  height: 100%;
   margin: 0 rem(13);
   background: #f3f1ed;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: rem(14);
   padding: rem(11);
 
-  &__img {
-    display: block;
-    width: 100%;
-    height: rem(278);
-    object-fit: cover;
-    border-radius: rem(8);
+  &:focus {
+    outline: none;
+  }
+
+  //== 768px ==//
+  @media(max-width: $mb) {
+    margin: 0 rem(8);
+  }
+
+  &__img-ibg {
+    @extend %ibg;
+    padding-bottom: percent(278, 390);
+
+    img {
+      border-radius: rem(14);
+    }
 
     &:not(:last-child) {
       margin-bottom: rem(28);
+
+      //== 576px ==//
+      @media(max-width: $mb-m) {
+        margin-bottom: rem(23);
+      }
     }
   }
 
   &__content {
     padding: 0 rem(22) rem(24);
+
+    //== 576px ==//
+    @media(max-width: $mb-m) {
+      padding: 0 rem(12) rem(18);
+    }
   }
 
   &__title {
@@ -29,7 +50,7 @@
     @include adaptiveValue("font-size", 30, 20);
 
     &:not(:last-child) {
-      margin-bottom: em(7, 30);
+      margin-bottom: rem(7);
     }
   }
 
@@ -40,10 +61,16 @@
 
     &:not(:last-child) {
       margin-bottom: em(41, 17);
+
+      //== 768px ==//
+      @media(max-width: $mb) {
+        margin-bottom: rem(15);
+      }
     }
   }
 
   &__button {
-
+    margin-top: auto;
+    flex-wrap: wrap;
   }
 }

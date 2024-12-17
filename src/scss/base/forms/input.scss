@@ -17,6 +17,22 @@ textarea {
   background-color: #2b231d;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: rem(12);
+
+  @include adaptiveValue("font-size", 19, 15);
+
+  //== 992px ==//
+  @media(max-width: $tb) {
+    height: rem(64.5);
+  }
+  //== 768px ==//
+  @media(max-width: $mb) {
+    height: rem(58.22);
+    padding-left: rem(20);
+  }
+  //== 576px ==//
+  @media(max-width: $mb-m) {
+    height: rem(50);
+  }
 }
 textarea.input {
   resize: none;

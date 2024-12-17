@@ -1,5 +1,5 @@
 .page__hero:not(:last-child) {
-  @include adaptiveValue("margin-bottom", 47, 42);
+  margin-bottom: rem(47);
 }
 
 .hero {
@@ -12,6 +12,11 @@
 
   &__content {
     grid-column: span 6;
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-column: span 5;
+    }
   }
 
   &__title {
@@ -23,6 +28,34 @@
       line-height: 1;
       gap: rem(4);
     }
+
+    img {
+      width: rem(86);
+      height: rem(86);
+      vertical-align: center;
+
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        width: rem(70);
+        height: rem(70);
+      }
+      //== 992px ==//
+      @media(max-width: $tb) {
+        width: rem(52);
+        height: rem(52);
+      }
+      //== 576px ==//
+      @media(max-width: $mb-m) {
+        width: rem(40);
+        height: rem(40);
+      }
+      //== 440px ==//
+      @media(max-width: $mb-s) {
+        width: rem(30);
+        height: rem(30);
+      }
+    }
+
     &:not(:last-child) {
       margin-bottom: em(23, 60);
     }
@@ -43,6 +76,19 @@
     height: rem(680);
     overflow: visible;
 
+    //== 992px ==//
+    @media(max-width: $tb) {
+      height: rem(420);
+    }
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      position: absolute;
+      z-index: -1;
+      height: rem(320);
+      width: 100%;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -61,6 +107,25 @@
       top: -5%;
       width: 130%;
       object-fit: contain;
+
+      //== 992px ==//
+      @media(max-width: $tb) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      //== 768px ==//
+      @media(max-width: $mb) {
+        width: 100%;
+        height: 100%;
+        left: auto;
+        right: -20%;
+        object-position: right;
+      }
+      //== 440px ==//
+      @media(max-width: $mb-s) {
+        right: -35%;
+        top: 60%;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 .page__contacts:not(:last-child) {
-  @include adaptiveValue("margin-bottom", 156, 50);
+  @include adaptiveValue("margin-bottom", 156, 65);
 }
 
 .contacts {
@@ -18,24 +18,54 @@
 
   &__grid {
     gap: rem(18);
+    grid-auto-flow: dense;
   }
 
   &__item:nth-child(5n + 4),
   &__item:nth-child(5n + 5) {
     grid-column: span 6;
+
+    //== 992px ==//
+    @media(max-width: $tb) {
+      grid-column: span 12;
+    }
+    @media(max-width: em(639.98)) {
+      grid-column: span 6;
+    }
   }
 
   &__item:nth-child(5n + 1) {
     margin-right: rem(39);
+
+    @media(max-width: $pc) {
+      margin-right: 0;
+    }
   }
 
   &__item:nth-child(5n + 2) {
     margin-right: rem(-14);
     margin-left: rem(-39);
+
+    @media(max-width: $pc) {
+      margin-right: 0;
+      margin-left: 0;
+      grid-column: span 12;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media(max-width: em(639.98)) {
+      grid-column: span 6;
+      align-items: flex-start;
+    }
   }
 
   &__item:nth-child(5n + 3) {
     margin-left: rem(18);
+
+    @media(max-width: $pc) {
+      margin-left: 0;
+    }
   }
 
   &__accent {
@@ -48,10 +78,25 @@
     padding: rem(22) rem(30) rem(24);
     background: rgba(53, 45, 39, 0.4);
     border-radius: rem(14);
+
+    @media(max-width: $pc) {
+      grid-column: span 6;
+    }
   }
 
   &__item-wide {
     @extend %fl-r-ctb;
+    gap: rem(15);
+
+    //== 440px ==//
+    @media(max-width: em(499.98)) {
+      align-items: flex-start;
+      flex-direction: column;
+
+      .button {
+        width: 100%;
+      }
+    }
   }
 
   &__link {

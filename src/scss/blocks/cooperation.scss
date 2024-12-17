@@ -11,26 +11,44 @@
     border-radius: rem(20);
   }
 
+  &__wrapper {
+    max-width: 80%;
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      max-width: 95%;
+    }
+    //== 576px ==//
+    @media(max-width: $mb-m) {
+      max-width: none;
+    }
+  }
+
   &::after,
   &::before {
     content: "";
     position: absolute;
     z-index: -1;
     top: 0;
-    @extend %bg-cov;
   }
 
   &::before {
-    left: 0;
-    width: 61%;
-    height: 66%;
-    background-image: url("@img/design/cooperation-label.svg");
-  }
-  &::after {
     right: 0;
     width: 48%;
     height: 100%;
+    @extend %bg-cov;
     background-image: url("@img/design/cooperation-background.png");
+
+    @media(max-width: em(1439.98)) {
+      background-position: left center;
+    }
+  }
+  &::after {
+    left: 0;
+    width: 61%;
+    height: 66%;
+    @extend %bg-con;
+    background-image: url("@img/design/cooperation-label.svg");
   }
 
   &__label {
@@ -58,6 +76,19 @@
 
     &:not(:last-child) {
       margin-bottom: em(43, 24);
+    }
+  }
+
+  &__form {
+    //== 768px ==//
+    @media(max-width: $mb) {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    //== 440px ==//
+    @media(max-width: $mb-s) {
+      max-width: none;
     }
   }
 }

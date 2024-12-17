@@ -4,6 +4,7 @@
   &__button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: rem(12);
     padding: rem(12.5) rem(22);
     border: 1px solid var(--clr-white);
@@ -28,7 +29,31 @@
 
   &__body {
     position: absolute;
+    top: calc(100% + rem(10));
+    left: 0;
+
+    min-width: rem(200);
+    @extend %fl-c-st;
+    padding: rem(20) rem(30);
+    background-color: rgba(0,0,0,0.8);
+    border-radius: rem(10);
+
     opacity: 0;
     visibility: hidden;
+    transform: translateY(10px);
+
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease;
+
+    .catalog._active & {
+      opacity: 1;
+      visibility: visible;
+      transform: none; 
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: em(10, 16);
+    }
   }
 }

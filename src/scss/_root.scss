@@ -1,11 +1,32 @@
 // Подключение общих CSS-переменных
 :root {
   //* Переменные
-  --header-height: 116px;
+  --header-height: 145px;
 
   //* Цвета
   --clr-white: #ece8df;
   --clr-black: #1d1814;
   --clr-accent: #ffcc79;
   --clr-red: #bf1d17;
+}
+
+//== 1200px ==//
+@media(max-width: $note-m) {
+  :root {
+    --header-height: 110px;
+  }
+}
+
+//== 576px ==//
+@media(max-width: $mb-m) {
+  :root {
+    --header-height: 90px;
+  }
+}
+
+//== 440px ==//
+@media(max-width: $mb-s) {
+  :root {
+    --header-height: 75px;
+  }
 }

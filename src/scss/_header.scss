@@ -7,10 +7,12 @@
 
   &__wrapper {
     position: fixed;
+    display: flex;
+    align-items: center;
     z-index: 29;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     min-height: var(--header-height);
     transition: all 0.32s ease-in-out;
     ._header-scroll & {
@@ -24,17 +26,25 @@
 
   &__container {
     width: 100%;
-    gap: rem(10);
+    gap: rem(20);
     @extend %fl-r-ctb;
+
+    //== 992px ==//
+    @media(max-width: $tb) {
+      justify-content: flex-end;
+    }
   }
 
   &__logo {
     &:not(:last-child) {
       margin-right: rem(70);
 
-      //== 1360px ==//
-      @media (max-width: $note-l) {
+      @media (max-width: $pc) {
         margin-right: 0;
+      }
+      //== 992px ==//
+      @media(max-width: $tb) {
+        margin-right: auto;
       }
     }
   }
@@ -43,8 +53,7 @@
     &:not(:last-child) {
       margin-right: rem(70);
 
-      //== 1360px ==//
-      @media (max-width: $note-l) {
+      @media (max-width: $pc) {
         margin-right: 0;
       }
     }
@@ -53,11 +62,56 @@
   &__actions {
     @extend %fl-r-ct;
     gap: rem(10);
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: rem(3);
+    }
+    //== 992px ==//
+    @media(max-width: $tb) {
+      display: flex;
+    }
+    //== 440px ==//
+    @media(max-width: $mb-s) {
+      display: none;
+    }
   }
 
   &__social {
     &:not(:last-child) {
       margin-right: rem(16);
+
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        margin-right: 0;
+      }
+    }
+
+    @media(max-width: $note-m) {
+      grid-column: span 2;
+      justify-content: center;
+    }
+  }
+
+  &__catalog {
+    .catalog__button {
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        width: 100%;
+      }
+    }
+    //== 992px ==//
+    @media(max-width: $tb) {
+      display: none;
+    }
+  }
+
+  &__button {
+    //== 768px ==//
+    @media(max-width: $mb) {
+      display: none;
     }
   }
 }

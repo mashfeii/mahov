@@ -1,5 +1,5 @@
 .page__advantages:not(:last-child) {
-  @include adaptiveValue("margin-bottom", 144, 50);
+  @include adaptiveValue("margin-bottom", 144, 65);
 }
 
 .advantages {
@@ -28,8 +28,19 @@
   }
 
   &__cards {
-    @extend %fl-r-ctb;
-    gap: rem(15);
+    column-gap: rem(15);
+    row-gap: rem(30);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    //== 768px ==//
+    @media(max-width: em(479.98)) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__card {
@@ -37,6 +48,11 @@
     padding-top: rem(84);
     @extend %fl-c-ct;
     text-align: center;
+
+    //== 576px ==//
+    @media(max-width: $mb-m) {
+      padding-top: rem(55);
+    }
 
     &::before {
       content: "";
@@ -50,6 +66,12 @@
       background-image: url("@img/icons/heart.svg");
       filter: drop-shadow(0px 10px 35px #d97e39)
         drop-shadow(0px -4px 4px #e99134);
+
+      //== 576px ==//
+      @media(max-width: $mb-m) {
+        width: rem(50);
+        height: rem(50);
+      }
     }
   }
 

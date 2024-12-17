@@ -27,6 +27,11 @@
       width: 100%;
       height: 100%;
       z-index: 5;
+
+      @media(max-width: em(529.98)) {
+        display: none;
+        overflow: hidden;
+      }
     }
     &::before {
       left: -100%;

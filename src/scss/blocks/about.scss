@@ -9,11 +9,33 @@
 
 .about {
   @include adaptiveValue("padding-top", 173, 80);
-  @include adaptiveValue("padding-bottom", 326, 180);
+  @include adaptiveValue("padding-bottom", 326, 215);
   @extend %bg-cov;
+
+  //== 768px ==//
+  @media(max-width: $mb) {
+    position: relative;
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
 
   &__content {
     grid-column: span 7;
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-column: span 6;
+      position: relative;
+      z-index: 2;
+    }
   }
 
   &__title {
@@ -34,6 +56,11 @@
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 57, 25);
     }
+
+    //== 576px ==//
+    @media(max-width: $mb-m) {
+      gap: rem(15);
+    }
   }
 
   &__card {
@@ -47,13 +74,13 @@
     font-weight: 800;
     line-height: 100%;
     letter-spacing: -0.03em;
-    @include adaptiveValue("font-size", 50, 26);
+    @include adaptiveValue("font-size", 50, 22);
   }
 
   &__card-descr {
     font-weight: 400;
     line-height: 130%;
     letter-spacing: -0.01em;
-    @include adaptiveValue("font-size", 20, 16);
+    @include adaptiveValue("font-size", 20, 14);
   }
 }

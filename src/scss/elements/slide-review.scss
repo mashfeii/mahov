@@ -1,12 +1,20 @@
 .slide-review {
-  &__image {
-    display: block;
-    width: 100%;
-    height: rem(568);
-    object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    border-radius: rem(14);
-
+  &:focus {
+    outline: none;
+  }
+  &__img-ibg {
+    position: relative;
+    padding-bottom: percent(568, 414);
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      border-radius: rem(14);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
     &:not(:last-child) {
       margin-bottom: rem(25);
     }

@@ -67,6 +67,27 @@ body {
 
 .page {
   padding-top: var(--header-height);
+
+  //== 992px ==//
+  @media(max-width: $tb) {
+    padding-top: calc(var(--header-height) + rem(30));
+  }
+}
+.page-home {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: rem(711);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    background-image: url("@img/background.png");
+  }
 }
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
