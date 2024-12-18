@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/general/_head.htm',{ "title":"Master Mahov | About us" })
+  <body>
+    <div class="wrapper">
+      @@include('html/general/_header.htm',{})
+      <main class="page">
+        <div class="page__breadcrumbs breadcrumbs container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="home.html" class="breadcrumbs__link">
+                Главная
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link">о нас</span>
+            </li>
+          </ul>
+        </div>
+        <section class="page__individual individual individual-about">
+          <div class="individual__container container grid">
+            <div class="individual__content">
+              <h1 class="individual__title big-title">О компании</h1>
+              <div class="individual__descr f-26-400">Господа, высокотехнологичная концепция общественного уклада обеспечивает актуальность поэтапного и последовательного развития общества. Принимая во внимание показатели успешности, реализация намеченных.</div>
+              <a href="javascript:void(0);" class="individual__button button _squared">Получить консультацию</a>
+            </div>
+            <div class="individual__image">
+              <img src="@img/hero/about.png" alt="">
+            </div>
+          </div>
+        </section>
+        <section class="page__description description description-shrink" style="background-image: url(&quot;@img/description/about.jpg&quot;)">
+          <div class="description__container container">
+            <h2 class="description__title main-title">Текст о том, почему нас выбирают</h2>
+            <div class="description__descr f-26-400">Текст описывающий выбранную категорию либо короткий текст о компании и покупке и условиях. Текст описывающий выбранную категорию либо короткий текст о компании и покупке и условиях выбранную категорию либо короткий текст о компании и покупке и условиях. Текст описывающий выбранную категорию либо короткий текст о компании и покупке и условиях. Текст описывающий выбранную категорию либо короткий текст о компании и покупке и условиях.</div>
+            <a href="javascript:void(0);" class="description__button button _squared">
+              Получить консультацию
+            </a>
+          </div>
+        </section>
+        @@include('html/blocks/results.htm',{})
+        @@include('html/blocks/steps.htm',{})
+        @@include('html/blocks/cooperation.htm',{})
+      </main>
+      @@include('html/general/_footer.htm',{})
+    </div>
+    @@include('html/general/_popup.htm',{}) @@include('html/general/_js.htm',{})
+  </body>
+</html>

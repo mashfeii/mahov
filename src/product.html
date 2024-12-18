@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/general/_head.htm',{ "title":"Master Mahov | Product" })
+  <body>
+    <div class="wrapper">
+      @@include('html/general/_header.htm',{})
+      <main class="page">
+        <div class="page__breadcrumbs breadcrumbs container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="home.html" class="breadcrumbs__link">
+                Главная
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="catalog.html" class="breadcrumbs__link">
+                Каталог
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link">Название продукции</span>
+            </li>
+          </ul>
+        </div>
+        @@include('html/blocks/product.htm',{})
+        <section class="page__catalog-block catalog-block catalog-block-cover">
+          <div class="catalog-block__container container">
+            <h2 class="catalog-block__title main-title">Каталог товаров <span class="catalog-block__counter">120</span></h2>
+            <div class="catalog-block__settings">
+              <div class="catalog-block__categories" data-categories>
+                <button class="catalog-block__category _active">Все категории</button>
+                <button class="catalog-block__category">Категория раз</button>
+                <button class="catalog-block__category">Вторая</button>
+                <button class="catalog-block__category">Третья</button>
+                <button class="catalog-block__category">Четвертая</button>
+                <button class="catalog-block__category">Пятая</button>
+              </div>
+            </div>
+            <div class="catalog-block__content grid">
+              <div class="catalog-block__card card">
+                <div class="card__img-ibg">
+                  <img src="@img/catalog/image.jpg" alt="" class="card__img" />
+                </div>
+                <h2 class="card__title">Светящийся домик</h2>
+                <div class="card__descr">
+                  Короткая характеристика при необходимости
+                </div>
+                <strong class="card__price">1500 ₽</strong>
+                <div class="card__buttons">
+                  <a href="javascript:void(0);" class="card__button button">
+                    <span>Заказать</span>
+                  </a>
+                  <a href="javascript:void(0);" class="card__button button _dark">
+                    <span>Подробнее</span>
+                  </a>
+                </div>
+              </div>
+              <div class="catalog-block__card card">
+                <div class="card__img-ibg">
+                  <img src="@img/catalog/image.jpg" alt="" class="card__img" />
+                </div>
+                <h2 class="card__title">Светящийся домик</h2>
+                <div class="card__descr">
+                  Короткая характеристика при необходимости
+                </div>
+                <strong class="card__price">1500 ₽</strong>
+                <div class="card__buttons">
+                  <a href="javascript:void(0);" class="card__button button">
+                    <span>Заказать</span>
+                  </a>
+                  <a href="javascript:void(0);" class="card__button button _dark">
+                    <span>Подробнее</span>
+                  </a>
+                </div>
+              </div>
+              <div class="catalog-block__card card">
+                <div class="card__img-ibg">
+                  <img src="@img/catalog/image.jpg" alt="" class="card__img" />
+                </div>
+                <h2 class="card__title">Светящийся домик</h2>
+                <div class="card__descr">
+                  Короткая характеристика при необходимости
+                </div>
+                <strong class="card__price">1500 ₽</strong>
+                <div class="card__buttons">
+                  <a href="javascript:void(0);" class="card__button button">
+                    <span>Заказать</span>
+                  </a>
+                  <a href="javascript:void(0);" class="card__button button _dark">
+                    <span>Подробнее</span>
+                  </a>
+                </div>
+              </div>
+              <div class="catalog-block__card card">
+                <div class="card__img-ibg">
+                  <img src="@img/catalog/image.jpg" alt="" class="card__img" />
+                </div>
+                <h2 class="card__title">Светящийся домик</h2>
+                <div class="card__descr">
+                  Короткая характеристика при необходимости
+                </div>
+                <strong class="card__price">1500 ₽</strong>
+                <div class="card__buttons">
+                  <a href="javascript:void(0);" class="card__button button">
+                    <span>Заказать</span>
+                  </a>
+                  <a href="javascript:void(0);" class="card__button button _dark">
+                    <span>Подробнее</span>
+                  </a>
+                </div>
+              </div>
+              <a href="javascript:void(0);" class="catalog-block__more-button button _fw _dark">
+                раздел услуг
+              </a>
+            </div>
+          </div>
+        </section>
+        @@include('html/blocks/text.htm',{})
+        @@include('html/blocks/cooperation.htm',{})
+      </main>
+      @@include('html/general/_footer.htm',{})
+    </div>
+    @@include('html/general/_popup.htm',{}) @@include('html/general/_js.htm',{})
+  </body>
+</html>

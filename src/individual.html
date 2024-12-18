@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/general/_head.htm',{ "title":"Master Mahov | Individual orders" })
+  <body>
+    <div class="wrapper">
+      @@include('html/general/_header.htm',{})
+      <main class="page">
+        <div class="page__breadcrumbs breadcrumbs container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="home.html" class="breadcrumbs__link">
+                Главная
+              </a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link">индивидуальные заказы</span>
+            </li>
+          </ul>
+        </div>
+        @@include('html/blocks/individual.htm',{})
+        @@include('html/blocks/description.htm',{})
+        @@include('html/blocks/steps.htm',{})
+        @@include('html/blocks/cooperation.htm',{})
+      </main>
+      @@include('html/general/_footer.htm',{})
+    </div>
+    @@include('html/general/_popup.htm',{}) @@include('html/general/_js.htm',{})
+  </body>
+</html>
