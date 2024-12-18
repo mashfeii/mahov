@@ -29,6 +29,14 @@
   @include adaptiveValue("font-size", 60, 29);
 }
 
+.small-title {
+    font-family: MursGothic;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    @include adaptiveValue("font-size", 45, 22);
+}
+
 .center {
   max-width: rem(768);
   margin-left: auto;
@@ -63,4 +71,8 @@
 
   @include adaptiveValue("padding-top", 133, 60);
   @include adaptiveValue("padding-bottom", 94, 45);
+}
+
+.fancybox-slide--html .fancybox-close-small {
+  padding: 5px;
 }

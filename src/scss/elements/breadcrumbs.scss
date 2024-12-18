@@ -1,0 +1,35 @@
+.page__breadcrumbs:not(:last-child) {
+  margin-bottom: rem(43);
+}
+
+.breadcrumbs {
+  &__list {
+    @extend %fl-r-ct;
+    column-gap: rem(14);
+    row-gap: rem(8);
+    flex-wrap: wrap;
+  }
+  &__item {
+    @extend %fl-r-ct;
+
+    gap: rem(14);
+    &:not(:first-child)::before {
+      content: "";
+      flex: 0 0 rem(14);
+      width: rem(14);
+      height: rem(14);
+      @extend %bg-con;
+      background-image: url('@img/icons/arrow.svg');
+    }
+    &:last-child {
+      cursor: default;
+      opacity: 0.4;
+    }
+  }
+  &__link {
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 16, 13);
+  }
+}

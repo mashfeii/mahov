@@ -1,0 +1,310 @@
+.page__works {
+  @include adaptiveValue("margin-bottom", 205, 65);
+}
+
+.works {
+  position: relative;
+
+  ._shadow {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    left: 0;
+    bottom: -10%;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(29, 24, 20, 0) 0%, rgba(29, 24, 20, 0.465455) 8.87%, rgba(29, 24, 20, 0.762151) 17.67%, #1d1814 51.08%);
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      display: none;
+    }
+  }
+
+  &::before,&::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: rem(740);
+    height: rem(762);
+    background-color: #9E6C42;
+    filter: blur(350px);
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      width: rem(400);
+      height: rem(300);
+    }
+  }
+  &::before {
+    top: -40%;
+    left: -35%;
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      left: -60%;
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      left: 0;
+      top: 0;
+    }
+  }
+  &::after {
+    top: 5%;
+    right: -35%;
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      right: -60%;
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      top: auto;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+
+  &__title {
+    font-family: MursGothic;
+    font-weight: 800;
+    line-height: 80%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--clr-red);
+    @include adaptiveValue("font-size", 150, 50);
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      &:not(:last-child) {margin-bottom: rem(20);}
+    }
+  }
+
+  &__container {
+    position: relative;
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      pointer-evnets: none;
+      border-radius: rem(14);
+      width: rem(323);
+      height: rem(406);
+      @extend %bg-cov;
+      background-image: url('@img/works/image-2.jpg');
+
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        height: rem(300);
+      }
+      //== 992px ==//
+      @media(max-width: $tb) {
+        display: none;
+      }
+    }
+    &::before {
+      top: 5%;
+      left: -36%;
+    }
+    &::after {
+      top: 16%;
+      right: -40%;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 3.31fr 6fr 3.31fr;
+    column-gap: rem(43);
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-template-columns: 1fr;
+      gap: rem(30);
+    }
+
+    &::before,&::after {
+      content: '';
+      position: absolute;
+      pointer-evnets: none;
+      border-radius: rem(14);
+      width: rem(323);
+      height: rem(527);
+      @extend %bg-cov;
+      background-image: url('@img/works/image.jpg');
+
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        height: rem(400);
+      }
+      //== 992px ==//
+      @media(max-width: $tb) {
+        display: none;
+      }
+    }
+
+    &::before {
+      left: -28%;
+      bottom: -20%;
+      background-position: 90% top;
+      background-image: url('@img/works/image-3.jpg');
+
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        left: -37%;
+      }
+    }
+    &::after {
+      right: -28%;
+      bottom: -23.2%;
+
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        right: -37%;
+      }
+    }
+  }
+
+  &__label {
+    line-height: 140%;
+    color: rgba(236,232,223,0.65);
+    font-size: rem(17);
+
+    &:not(:last-child) {margin-bottom: rem(34);}
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      &:not(:last-child) {margin-bottom: rem(10);}
+    }
+  }
+
+  &__image {
+    @extend %ibg;
+    overflow: hidden;
+    border-radius: rem(14);
+  }
+
+  &__col {
+    &:nth-child(1) {
+     padding-top: rem(74); 
+
+     //== 992px ==//
+     @media(max-width: $tb) {
+       padding-top: rem(20);
+     }
+     //== 768px ==//
+     @media(max-width: $mb) {
+       padding-top: 0;
+       display: grid;
+       grid-template-columns: 1fr 2.5fr;
+       gap: rem(10);
+
+       .works__label {
+         grid-column: span 2;
+       }
+     }
+    }
+    &:nth-child(2) {
+      align-items: start;
+      display: grid;
+      column-gap: rem(36);
+      grid-template-columns: 2.85fr 1fr;
+
+      //== 768px ==//
+      @media(min-width: $mb) {
+        margin-top: rem(-45);
+      }
+      //== 768px ==//
+      @media(max-width: $mb) {
+        grid-template-columns: 0.8fr 1fr 2.2fr;
+        gap: rem(15);
+      }
+    }
+    &:nth-child(3) {
+      align-self: center;
+    }
+  }
+
+  &__image-1 {
+    padding-bottom: percent(476, 323);
+    &:not(:last-child) {margin-bottom: rem(34);}
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      padding-bottom: 30%;
+
+      &:not(:last-child) {margin-bottom: 0;}
+    }
+  }
+  &__image-2 {
+    padding-bottom: percent(154, 323);
+    border-radius: rem(14) rem(14) 0 0;
+  }
+  &__image-3 {
+    grid-column: span 2;
+    height: rem(540);
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      height: rem(370)
+    }
+    //== 992px ==//
+    @media(max-width: $tb) {
+      height: rem(300);
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-column: span 1;
+      height: rem(200);
+    }
+  }
+  &__image-4 {
+    height: rem(274);
+    //== 992px ==//
+    @media(max-width: $tb) {
+      height: rem(220);
+    }
+  }
+  &__image-5 {
+    height: rem(203);
+    //== 992px ==//
+    @media(max-width: $tb) {
+      height: rem(120);
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      height: rem(190);
+    }
+  }
+  &__image-6 {
+    padding-bottom: percent(406, 323);
+    &:not(:last-child) {margin-bottom: rem(37);}
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      padding-bottom: 55%;
+    }
+  }
+
+  &__button.button._fw {
+    position: relative;
+    z-index: 3;
+    font-weight: 600;
+    line-height: 140%;
+    @include adaptiveValue("font-size", 24, 15);
+
+    //== 768px ==//
+    @media(min-width: $mb) {
+      padding-top: rem(42);
+      padding-bottom: rem(44);
+    }
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      margin-top: rem(20);
+    }
+  }
+}

@@ -9,3 +9,17 @@
 .f-24-400 {
   @extend %f-24-400;
 }
+%f-26-400 {
+  line-height: 150%;
+  @include adaptiveValue("font-size", 26, 16);
+}
+.f-26-400 {
+  @extend %f-26-400;
+}
+%f-20-400 {
+  line-height: 150%;
+  @include adaptiveValue("font-size", 20, 15);
+}
+.f-20-400 {
+  @extend %f-20-400;
+}

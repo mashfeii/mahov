@@ -14,7 +14,7 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "Commissioner", sans-serif;
+$fontFamily: Commissioner, MursGothic, sans-serif;
 $fontSize: rem(18); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
@@ -66,16 +66,16 @@ body {
 }
 
 .page {
-  padding-top: var(--header-height);
-
-  //== 992px ==//
-  @media(max-width: $tb) {
-    padding-top: calc(var(--header-height) + rem(30));
-  }
+  padding-top: calc(var(--header-height) + rem(31));
 }
 .page-home {
   position: relative;
+  //== 992px ==//
+  @media(min-width: $tb) {
+    padding-top: calc(var(--header-height));
+  }
   &::before {
+    pointer-events: none;
     content: "";
     position: absolute;
     z-index: -1;
@@ -150,6 +150,10 @@ body {
 @import "elements/catalog";
 @import "elements/slide";
 @import "elements/slide-review";
+@import "elements/breadcrumbs";
+@import "elements/card";
+@import "elements/filter";
+@import "elements/block-category";
 
 // Подключение стилей отдельных блоков
 @import "header";
@@ -164,3 +168,10 @@ body {
 @import "blocks/reviews";
 @import "blocks/contacts";
 @import "blocks/cooperation";
+@import "blocks/catalog";
+@import "blocks/product";
+@import "blocks/individual";
+@import "blocks/description";
+@import "blocks/steps";
+@import "blocks/results";
+@import "blocks/works";

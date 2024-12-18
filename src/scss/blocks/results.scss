@@ -1,0 +1,152 @@
+.page__results:not(:last-child) {
+  @include adaptiveValue("margin-bottom", 150, 65);
+  
+}
+
+.results {
+  &__title {
+    &:not(:last-child) {margin-bottom: em(6, 60);}
+  }
+
+  &__descr {
+    max-width: rem(950);
+
+    &:not(:last-child) {margin-bottom: em(55, 26);}
+  }
+
+  &__list {
+    display: flex;
+    gap: rem(70);
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      gap: rem(30);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    @extend %fl-c-st;
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      flex: 0 0 calc(50% - rem(15));
+    }
+  }
+  &__item-counter {
+    font-family: MursGothic;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    color: #FFCC79;
+    text-shadow: 0px 10px 45px rgba(217, 126, 57, 0.6);
+    @include adaptiveValue("font-size", 60, 29);
+
+    &:not(:last-child) {margin-bottom: rem(4);}
+  }
+  &__item-text {
+    font-weight: 500;
+    line-height: 130%;
+    color: #FFCC79;
+    @include adaptiveValue("font-size", 22, 17);
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__container {
+    @include adaptiveValue("margin-bottom", 161, 40);
+  }
+
+  &__content {
+    position: relative;
+    grid-column: span 6;
+
+    //== 768px ==//
+    @media(min-width: $mb) {
+      margin-right: rem(-33);
+    }
+
+    .results__title:not(:last-child) {margin-bottom: em(24, 60);}
+
+    &::before {
+      content: "“";
+      font-family: MursGothic;
+      font-weight: 800;
+      line-height: 100%;
+      letter-spacing: 0.05em;
+      color: var(--clr-red);
+      @include adaptiveValue("font-size", 140, 40);
+
+      position: absolute;
+      top: 26%;
+      left: -17.5%;
+
+      //== 768px ==//
+      @media(max-width: $mb) {
+        top: auto;
+        left: auto;
+        bottom: -2%;
+        right: 5%;
+      }
+    }
+  }
+
+  &__word-block {
+    &:not(:last-child) {margin-bottom: em(17, 26);}
+  }
+
+  &__undertitle {
+    line-height: 150%;
+    color: rgba(236, 232, 223, 0.4);
+    @include adaptiveValue("font-size", 26, 18);
+  }
+
+  &__image {
+    grid-column: span 6;
+    @extend %ibg-contain;
+
+    img {
+      top: -47%;
+      left: -37%;
+      width: 160%;
+      height: 260%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(385);
+      height: rem(451);
+      background: #9E6C42;
+      filter: blur(214.5px);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -5%;
+      left: -46%;
+      width: 180%;
+      height: 120%;
+      @extend %bg-con;
+      background-image: url('@img/design/about-down.svg');
+    }
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      height: rem(300);
+      img {
+        left: -25%;
+      }
+    }
+  }
+}
+

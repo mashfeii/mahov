@@ -17,6 +17,7 @@
   text-edge: cap;
   letter-spacing: -0.01em;
   color: var(--clr-black);
+  transition: background-color 0.3s ease 0s;
 
   @include adaptiveValue("font-size", 18, 15);
 
@@ -36,6 +37,7 @@
 
   @media (any-hover: hover) {
     &:hover {
+      background-color: #e99134;
     }
   }
 
@@ -82,7 +84,17 @@
 
     font-weight: 600;
     line-height: 140%;
+    transition: background-color 0.3s ease 0s, box-shadow 0.3s ease 0s;
     @include adaptiveValue("font-size", 19, 15);
+
+    @media(any-hover: hover) {
+      &:hover {
+        background-color: #e99134;
+        box-shadow:
+        0px 10px 35px -15px #e99134,
+        inset 0px -4px 4px var(--clr-accent);
+      }
+    }
 
     //== 992px ==//
     @media(max-width: $tb) {
@@ -97,6 +109,12 @@
   &._dark {
     background: rgba(241, 230, 218, 0.08);
     color: var(--clr-white);
+
+    @media(any-hover: hover) {
+      &:hover {
+        background: rgba(241, 230, 218, 0.18);
+      }
+    }
   }
 
   &._white {

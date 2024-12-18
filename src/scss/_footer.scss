@@ -89,7 +89,14 @@
     leading-trim: both;
     text-edge: cap;
     color: rgba(236, 232, 223, 0.5);
+    transition: color 0.3s ease 0s;
     @include adaptiveValue("font-size", 16, 12);
+
+    @media(any-hover: hover) {
+      &:hover {
+        color: rgba(236, 232, 223, 0.8);
+      }
+    }
   }
 
   &__navigation {
@@ -131,7 +138,14 @@
     line-height: 140%;
     leading-trim: both;
     text-edge: cap;
+    transition: color 0.3s ease 0s;
     @include adaptiveValue("font-size", 18, 14);
+
+    @media(any-hover: hover) {
+      &:hover {
+        color: var(--clr-accent);
+      }
+    }
   }
 
   &__navigation-title {

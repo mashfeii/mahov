@@ -11,12 +11,19 @@ textarea {
 .input {
   width: 100%;
   padding: rem(19) rem(30) rem(25);
+  color: var(--clr-white);
 
   height: rem(72);
 
   background-color: #2b231d;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: rem(12);
+  transition: border-color 0.3s ease 0s;
+
+  &:focus {
+    outline: none;
+    border-color:rgba(255, 255, 255, 0.53);
+  }
 
   @include adaptiveValue("font-size", 19, 15);
 

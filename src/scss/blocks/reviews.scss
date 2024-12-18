@@ -1,5 +1,5 @@
 .page__reviews:not(:last-child) {
-  @include adaptiveValue("margin-bottom", 160, 65);
+  @include adaptiveValue("margin-bottom", 182, 65);
 }
 
 .reviews {

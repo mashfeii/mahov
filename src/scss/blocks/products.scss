@@ -3,6 +3,46 @@
 }
 
 .products {
+  position: relative;
+
+  &::before,&::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: rem(740);
+    height: rem(542);
+    background: #9E6C42;
+    filter: blur(350px);
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      width: rem(500);
+      height: rem(400);
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      width: rem(300);
+      height: rem(200);
+    }
+  }
+  &::before {
+    top: -15%;
+    left: -35%;
+    //== 768px ==//
+    @media(max-width: $mb) {
+      top: 10%;
+      left: -5%;
+    }
+  }
+  &::after {
+    right: -15%;
+    bottom: 0;
+    //== 768px ==//
+    @media(max-width: $mb) {
+      right: 5%;
+    }
+  }
+
   &__title {
     text-transform: uppercase;
     @include adaptiveValue("font-size", 50, 28);

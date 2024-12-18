@@ -1,0 +1,70 @@
+.card {
+  &__img-ibg {
+    @extend %ibg;
+    padding-bottom: percent(341, 314);
+
+    img {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: rem(14);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+  &__title {
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    @include adaptiveValue("font-size", 20, 16);
+
+    &:not(:last-child) {margin-bottom: rem(3);}
+  }
+  &__descr {
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: rgba(236, 232, 223, 0.7);
+    @include adaptiveValue("font-size", 16, 13);
+
+    &:not(:last-child) {margin-bottom: rem(11);}
+  }
+  &__price {
+    display: block;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    @include adaptiveValue("font-size", 28, 20);
+
+    &:not(:last-child) {margin-bottom: rem(19);}
+  }
+
+  &__buttons {
+    @extend %fl-r-ct;
+    flex-wrap: wrap;
+    gap: rem(4);
+  }
+
+  &__button {
+    padding: rem(13.5) rem(20) rem(16.5);
+    font-weight: 600;
+    line-height: 140%;
+    @include adaptiveValue("font-size", 16, 14);
+
+    &:not(._dark) {
+      box-shadow: 0px 10px 35px -15px #D97E39, inset 0px -4px 4px #E99134;
+    }
+
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      width: 100%;
+    }
+    //== 992px ==//
+    @media(max-width: $tb) {
+      width: auto;
+    }
+    @media(max-width: em(489.98)) {
+      width: 100%;
+      padding: rem(9.5) rem(15) rem(11.5);
+    }
+  }
+}

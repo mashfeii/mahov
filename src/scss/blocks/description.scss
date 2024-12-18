@@ -1,0 +1,40 @@
+.page__description {
+  @include adaptiveValue("margin-bottom", 145, 65);
+}
+
+.description {
+  position: relative;
+  z-index: 2;
+  @extend %bg-cov;
+  @include adaptiveValue("padding-top", 175, 60);
+  @include adaptiveValue("padding-bottom", 187, 66);
+
+  &.description-shrink {
+    @include adaptiveValue("padding-top", 140, 60);
+  }
+
+  //== 768px ==//
+  @media(max-width: $mb) {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__title {
+    max-width: rem(730);
+
+    &:not(:last-child) {margin-bottom: em(16, 60);}
+  }
+  &__descr {
+    max-width: rem(810);
+
+    &:not(:last-child) {margin-bottom: em(51, 26);}
+  }
+}

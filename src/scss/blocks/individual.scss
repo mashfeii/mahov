@@ -1,0 +1,216 @@
+.page__individual {
+  @include adaptiveValue("margin-bottom", 115, 65);
+}
+
+.individual {
+  position: relative;
+  z-index: 5;
+
+  &::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -35%;
+    z-index: -1;
+    width: rem(740);
+    height: rem(542);
+    background: #9E6C42;
+    filter: blur(350px);
+    transform: translateY(-50%);
+    //== 1200px ==//
+    @media(max-width: $note-m) {
+      width: rem(500);
+      height: rem(400);
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      width: rem(300);
+      height: rem(200);
+      left: -5%;
+    }
+  }
+
+  &__container {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 151, 50);
+    }
+  }
+  &__content {
+    grid-column: span 6;
+    margin-right: rem(-30);
+    //== 1200px ==//
+    @media(min-width: $note-m) {
+      padding-top: rem(71);
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-column: span 4;
+    }
+
+    .individual-about & {
+      padding-bottom: rem(220);
+
+      //== 1200px ==//
+      @media(min-width: $note-m) {
+        padding-top: rem(89);
+      }
+      //== 1200px ==//
+      @media(max-width: $note-m) {
+        padding-bottom: rem(150);
+      }
+      //== 992px ==//
+      @media(max-width: $tb) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  &__title {
+    &:not(:last-child) {margin-bottom: rem(5);}
+  }
+
+  &__descr {
+    &:not(:last-child) {margin-bottom: em(32, 26);}
+  }
+
+  &__image {
+    position: relative;
+    overflow: visible;
+    grid-column: span 6;
+
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 5%;
+      left: -37%;
+      width: 185%;
+      height: 100%;
+      @extend %bg-cov;
+      background-position: left center;
+      background-image: url('@img/design/individual.svg');
+
+      .individual-about & {
+        background-image: url('@img/design/about.svg');
+        top: -18%;
+        left: -67%;
+        width: 214%;
+        height: 112%;
+      }
+
+      //== 992px ==//
+      @media(max-width: $tb) {
+        top: -15%;
+        background-size: contain;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: 46%;
+      background: #9e6c42;
+      filter: blur(122px);
+    }
+
+    img {
+      position: absolute;
+      top: -33%;
+      width: 100%;
+      height: 180%;
+      left: 1%;
+      object-fit: contain;
+
+      .individual-about & {
+        left: -4%;
+        top: -40%;
+        width: 110%;
+      }
+    }
+
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-column: span 2;
+
+      img {
+        width: 140%;
+      }
+    }
+  }
+
+  &__cards {
+    row-gap: rem(18);
+  }
+
+  &__card {
+    position: relative;
+    grid-column: span 4;
+    @extend %fl-c-st;
+    background-color: #352D27;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: rem(14);
+    padding: rem(37) rem(39);
+
+    //== 992px ==//
+    @media(max-width: $tb) {
+      padding: rem(30) rem(25);
+    }
+    //== 768px ==//
+    @media(max-width: $mb) {
+      grid-column: span 3;
+      &:nth-child(3n + 3) {
+        grid-column: span 6;
+      }
+    }
+    //== 576px ==//
+    @media(max-width: $mb-m) {
+      grid-column: span 6;
+    }
+
+    &::before {
+      content: "";
+      flex: 0 0 rem(70);
+      height: rem(70);
+      width: rem(70);
+      margin-left: rem(-10);
+      @extend %bg-con;
+      background-image: url('@img/icons/heart.svg');
+      filter: drop-shadow(0px 10px 35px #D97E39) drop-shadow(0px -4px 4px #E99134);
+      margin-bottom: rem(52);
+
+      //== 992px ==//
+      @media(max-width: $tb) {
+        flex: 0 0 rem(50);
+        height: rem(50);
+        width: rem(50);
+        margin-bottom: rem(20);
+      }
+      //== 576px ==//
+      @media(max-width: $mb-m) {
+        position: absolute;
+        height: rem(40);
+        width: rem(40);
+        top: rem(20);
+        right: rem(20);
+      }
+    }
+  }
+  &__card-title {
+    font-weight: 500;
+    line-height: 140%;
+    color: #F1E5DA;
+    @include adaptiveValue("font-size", 29, 20);
+
+    &:not(:last-child) {margin-bottom: rem(6);}
+  }
+  &__card-label {
+    line-height: 140%;
+    color: rgba(241,229,218,0.8);
+    @include adaptiveValue("font-size", 18, 15);
+  }
+}
